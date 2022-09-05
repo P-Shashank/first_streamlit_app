@@ -46,7 +46,7 @@ except URLError as e:
 #streamlit.dataframe(my_data_rows)
 
 def insert_row_snowflake(new_fruit):
-  with my_cnx.cursor as my_cur:
+  with my_cnx.cursor() as my_cur:
     mycur.execute("insert into fruit_load_list values ('from streamlit')")
     return "Thanks for adding " + new_fruit
 
